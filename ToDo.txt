@@ -1,0 +1,10 @@
+- Hintergrund Sprite
+- Kollision mit Asteroiden (Game Over)
+- Kanonen
+- Particle System
+
+Reserve:
+- Planeten, Asteroiden, Texturen
+- Powerups
+- Upgrades, Währung
+- verschiedene Modi (Highscore, Level)
