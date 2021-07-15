@@ -7,6 +7,8 @@ Reserve:
 - verschiedene Modi (Highscore, Level)
 - Game Over Screen
 - Game Over Animation
+- Asteroiden Zerstörung
+- Asteroiden Zerstörungsanimation
 
 ---------------------------------
 
