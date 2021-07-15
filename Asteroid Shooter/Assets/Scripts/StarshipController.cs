@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StarshipController : MonoBehaviour
 {
@@ -48,6 +49,14 @@ public class StarshipController : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+     //   if(collision.gameObject.name == "Asteroid")
+       // {
+            SceneManager.LoadScene("Main");
+            Debug.Log("Hit");
+       // }
+    }
     //returns a Vector 2 thats rotated alpha degrees from the y-Axis
     private Vector2 GetUnitVectorFromAngle(float alpha)
     {
