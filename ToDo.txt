@@ -5,10 +5,9 @@ Reserve:
 - Powerups
 - Upgrades, Währung
 - verschiedene Modi (Highscore, Level)
-- Game Over Screen
 - Game Over Animation
-- Asteroiden Zerstörung
 - Asteroiden Zerstörungsanimation
+- Kometen (schnell und klein)
 
 ---------------------------------
 
@@ -16,3 +15,5 @@ Done:
 - Kollision mit Asteroiden (Game Over)
 - Kanonen
 - Particle System
+- Game Over Screen 
+- Asteroiden Zerstörung
