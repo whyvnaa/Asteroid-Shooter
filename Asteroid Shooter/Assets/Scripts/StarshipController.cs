@@ -53,7 +53,7 @@ public class StarshipController : MonoBehaviour
     {
         if(collision.gameObject.layer == 6)
         {
-            SceneManager.LoadScene("Main");
+            GameOver(0);
         }
     }
     //returns a Vector 2 thats rotated alpha degrees from the y-Axis
@@ -62,4 +62,15 @@ public class StarshipController : MonoBehaviour
         float rad = alpha / 360 * 2 * Mathf.PI;
         return new Vector2(Mathf.Cos(rad + Mathf.PI/2), Mathf.Sin(rad + Mathf.PI / 2));
     }
+
+
+    // Game Over Screen 
+    public GameOverScreen GameOverScreen;
+
+    void GameOver(int points)
+    {
+        GameOverScreen.Setup(points);
+        Time.timeScale = 0;
+    }
+
 }

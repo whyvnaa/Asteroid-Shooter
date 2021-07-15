@@ -12,16 +12,13 @@ public class Shooting : MonoBehaviour
 
     public float shootingPeriod = 0.2f;
 
+    public float destroyDelay = 1.0f;
+
 
     void Start(){
         StartCoroutine("ShootingTimer");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     IEnumerator ShootingTimer() {
         while(true){          
@@ -35,6 +32,6 @@ public class Shooting : MonoBehaviour
         GameObject laser = Instantiate(laserPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = laser.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * laserForce, ForceMode2D.Impulse);
+        Object.Destroy(laser, destroyDelay);
     }
-
 }
