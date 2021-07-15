@@ -51,11 +51,11 @@ public class StarshipController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-     //   if(collision.gameObject.name == "Asteroid")
-       // {
+        if(collision.gameObject.name == "Asteroid")
+        {
             SceneManager.LoadScene("Main");
             Debug.Log("Hit");
-       // }
+        }
     }
     //returns a Vector 2 thats rotated alpha degrees from the y-Axis
     private Vector2 GetUnitVectorFromAngle(float alpha)
