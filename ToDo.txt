@@ -8,3 +8,4 @@ Reserve:
 - Powerups
 - Upgrades, Währung
 - verschiedene Modi (Highscore, Level)
+- Game Over Screen
