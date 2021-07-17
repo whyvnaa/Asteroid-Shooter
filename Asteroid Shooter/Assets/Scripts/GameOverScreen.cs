@@ -22,4 +22,10 @@ public class GameOverScreen : MonoBehaviour
         SceneManager.LoadScene("Main");
     }
 
+    public void MenuButton()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Menu");
+    }
+
 }
