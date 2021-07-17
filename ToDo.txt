@@ -1,13 +1,20 @@
-- Hintergrund Sprite
+- verschiedene Asteroiden (Artwork und dann implementierung)
+- Asteroiden Zerstörungsanimation
+- Game Over Animation
 
-Reserve:
-- Planeten, Asteroiden, Texturen
-- Powerups
+Reserve (grob nach Priorität):
+
+
+- Asteroiden mit mehreren Leben (genaue Umsetzung noch besprechen)
+- Powerups Sprites
+- Powerups implementieren
+- Hauptmenü Screen
+- Kometen (schnell und klein)
 - Upgrades, Währung
 - verschiedene Modi (Highscore, Level)
-- Game Over Animation
-- Asteroiden Zerstörungsanimation
-- Kometen (schnell und klein)
+- Planeten
+- verschiedene Raumschiffe
+
 
 ---------------------------------
 
@@ -15,5 +22,6 @@ Done:
 - Kollision mit Asteroiden (Game Over)
 - Kanonen
 - Particle System
-- Game Over Screen 
+- Game Over Screen
 - Asteroiden Zerstörung
+- Hintergrund Sprite
