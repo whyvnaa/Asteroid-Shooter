@@ -8,6 +8,7 @@ public class Asteroid : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 screenBounds;
     private float speed;
+
     void Start()
     {
         speed = GameObject.Find("Main Camera").GetComponent<DeployAsteroids>().averageAsteroidSpeedAtStart + Random.Range(-3, 3);
