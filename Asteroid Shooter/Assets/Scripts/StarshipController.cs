@@ -53,7 +53,7 @@ public class StarshipController : MonoBehaviour
     {
         if(collision.gameObject.layer == 6)
         {
-            GameOver(0);
+            GameOver(ScoreScript.scoreValue);
         }
     }
     //returns a Vector 2 thats rotated alpha degrees from the y-Axis
@@ -67,9 +67,10 @@ public class StarshipController : MonoBehaviour
     // Game Over Screen 
     public GameOverScreen GameOverScreen;
 
-    void GameOver(int points)
+    void GameOver(int score)
     {
-        GameOverScreen.Setup(points);
+        GameOverScreen.Setup(score);
+        ScoreScript.scoreValue = 0;
         Time.timeScale = 0;
         this.enabled = false;
     }

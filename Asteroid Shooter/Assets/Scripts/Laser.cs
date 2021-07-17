@@ -9,7 +9,13 @@ public class Laser : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
-        Destroy(collision.gameObject);    
+
+        if (GetComponent<Renderer>().isVisible)
+        {
+            Destroy(gameObject);
+            Destroy(collision.gameObject);
+            ScoreScript.scoreValue += 1;
+        }
+        
     }
 }
