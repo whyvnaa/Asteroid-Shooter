@@ -1249,7 +1249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1356622210700523916, guid: b777b5112044915419ff8c9f5793c5b6, type: 3}
       propertyPath: rotationSpeed
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1356622210700523916, guid: b777b5112044915419ff8c9f5793c5b6, type: 3}
       propertyPath: GameOverScreen
