@@ -14,6 +14,7 @@ Reserve (grob nach Priorität):
 - verschiedene Modi (Highscore, Level)
 - Planeten
 - verschiedene Raumschiffe
+- Boost, kurze Beschleunigung (als kleiner button, der über die Zeit auflädt)
 
 
 ---------------------------------
