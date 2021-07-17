@@ -287,7 +287,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroidPrefab: {fileID: 5400653508798774637, guid: 67d226dc13aeaea43826b2419f60beef, type: 3}
-  respawnTime: 1
+  respawnTimeAtStart: 1
+  averageAsteroidSpeedAtStart: 5
   spawnDistance: 15
 --- !u!20 &519420031
 Camera:

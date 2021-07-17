@@ -71,6 +71,7 @@ public class StarshipController : MonoBehaviour
     {
         GameOverScreen.Setup(points);
         Time.timeScale = 0;
+        this.enabled = false;
     }
 
 }

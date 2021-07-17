@@ -5,7 +5,8 @@ using UnityEngine;
 public class DeployAsteroids : MonoBehaviour
 {
     public GameObject asteroidPrefab;
-    public float respawnTime = 1f;
+    public float respawnTimeAtStart = 1f;
+    public float averageAsteroidSpeedAtStart = 5;
     //distance from the origin in which asteroids are spawned
     public float spawnDistance = 15f;
     private Vector2 screenBounds;
@@ -39,7 +40,7 @@ public class DeployAsteroids : MonoBehaviour
     IEnumerator AsteroidWave()
     {
         while (true){   
-            yield return new WaitForSeconds(respawnTime);
+            yield return new WaitForSeconds(respawnTimeAtStart);
             SpawnEnemy();
         }
     }
