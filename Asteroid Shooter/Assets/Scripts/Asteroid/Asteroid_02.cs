@@ -1,17 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static DeployAsteroids;
 
-public class Asteroid : MonoBehaviour
+public class Asteroid_02 : Asteroid
 {
-    private Rigidbody2D rb;
-    private Vector2 screenBounds;
-    private float speed;
 
     void Start()
     {
-        speed = GameObject.Find("Main Camera").GetComponent<DeployAsteroids>().averageAsteroidSpeedAtStart + Random.Range(-3, 3);
+
+        speed = avgSpeed * (GameObject.Find("Main Camera").GetComponent<DeployAsteroids>().averageAsteroidSpeedAtStart + Random.Range(-3, 3));
         //gets reference to the Rigidbody2D Component and sets the speed
         rb = this.GetComponent<Rigidbody2D>();
         //sets velocity towards origin with magnitude speed
@@ -21,12 +18,4 @@ public class Asteroid : MonoBehaviour
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
     }
 
-    void Update()
-    {
-        //Check if Asteroid is far outside of the screen, if yes, it's destroyed. (Possible optimization: Don't check every Frame)
-        if(transform.position.x > screenBounds.x*2 || transform.position.x < -screenBounds.x * 2)
-        {
-            Destroy(this.gameObject);
-        }
-    }
 }

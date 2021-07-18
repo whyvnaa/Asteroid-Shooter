@@ -133,6 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   rotationSpeed: 1
+  GameOverScreen: {fileID: 0}
 --- !u!198 &8890318798514455130
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -4954,5 +4955,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 50368900}
   laserPrefab: {fileID: 2504445993964910939, guid: 0ac6d05ceebfe431286b908f4ae0e2e0, type: 3}
-  laserForce: 10
-  shootingPeriod: 0.2
+  speed: 10
+  shootingPeriod: 0.5
+  destroyDelay: 1

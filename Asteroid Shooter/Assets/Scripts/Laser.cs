@@ -13,8 +13,15 @@ public class Laser : MonoBehaviour
         if (GetComponent<Renderer>().isVisible)
         {
             Destroy(gameObject);
-            Destroy(collision.gameObject);
-            ScoreScript.scoreValue += 1;
+            Asteroid asteroid = collision.gameObject.GetComponent<Asteroid>();           
+            asteroid.lifes--;
+            if (asteroid.lifes < 1)
+            {
+                Destroy(collision.gameObject);
+                ScoreScript.scoreValue += 1;
+            }
+                     
+            
         }
         
     }

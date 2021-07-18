@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DeployAsteroids : MonoBehaviour
 {
-    public GameObject asteroidPrefab;
+    public GameObject asteroidPrefab_01;
+    public GameObject asteroidPrefab_02;
     public float respawnTimeAtStart = 1f;
     public float averageAsteroidSpeedAtStart = 5;
     //distance from the origin in which asteroids are spawned
@@ -19,7 +20,16 @@ public class DeployAsteroids : MonoBehaviour
     
     private void SpawnEnemy()
     {
-        GameObject a = Instantiate(asteroidPrefab) as GameObject;
+        float variant = Random.Range(0f, 1f);
+        GameObject a;
+        if (variant < 0.3)
+        {
+            a = Instantiate(asteroidPrefab_02) as GameObject;
+        }
+        else
+        {
+            a = Instantiate(asteroidPrefab_01) as GameObject;
+        }       
         a.transform.position = CalculateRandomPosition();
     }
 
