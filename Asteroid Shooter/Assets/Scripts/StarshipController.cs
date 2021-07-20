@@ -9,7 +9,7 @@ public class StarshipController : MonoBehaviour
     public float rotationSpeed = 0.01f;
     private float actualSpeed;
     private Vector2 faceDirection = new Vector2(0,1);
-
+    public Camera uiCamera;
     public Animator animator;
     public bool isDead = false;
 
@@ -20,12 +20,11 @@ public class StarshipController : MonoBehaviour
     
     void Update()
     {
+        //Stores the direction which the spaceship is facing in a Vector2 and moves the spaceship in that direction
+        faceDirection = GetUnitVectorFromAngle(transform.eulerAngles.z);
+        transform.position = (Vector2)transform.position + faceDirection * actualSpeed * Time.deltaTime;
         if (!isDead)
         {
-            //Stores the direction which the spaceship is facing in a Vector2 and moves the spaceship in that direction
-            faceDirection = GetUnitVectorFromAngle(transform.eulerAngles.z);
-            transform.position = (Vector2)transform.position + faceDirection * actualSpeed * Time.deltaTime;
-
             //rotates the spaceship to the right, left depending on which side of the screen is touched
             if (Input.touchCount > 0)
             {
@@ -96,7 +95,6 @@ public class StarshipController : MonoBehaviour
     {
         isDead = true;
         this.GetComponent<ParticleSystem>().Stop();
-        actualSpeed = 0;
         animator.SetBool("IsDead", true);
         StartCoroutine(waitGameOver(score));
     }
@@ -105,8 +103,9 @@ public class StarshipController : MonoBehaviour
     {
         yield return new WaitForSeconds(1.2f);
         GameOverScreen.Setup(score);
-        ScoreScript.scoreValue = 0;
-        Time.timeScale = 0;
+        uiCamera.enabled = false;
+        actualSpeed = 0;
+        //Time.timeScale = 0;
         this.enabled = false;
     }
 

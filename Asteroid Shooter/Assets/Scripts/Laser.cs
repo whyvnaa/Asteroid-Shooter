@@ -19,9 +19,7 @@ public class Laser : MonoBehaviour
             {
                 Destroy(collision.gameObject);
                 ScoreScript.scoreValue += asteroid.points;
-            }
-                     
-            
+            } 
         }
         
     }

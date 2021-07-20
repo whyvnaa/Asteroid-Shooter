@@ -1806,6 +1806,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 868196005}
     - target: {fileID: 1356622210700523916, guid: b777b5112044915419ff8c9f5793c5b6, type: 3}
+      propertyPath: uiCamera
+      value: 
+      objectReference: {fileID: 1365270878}
+    - target: {fileID: 1356622210700523916, guid: b777b5112044915419ff8c9f5793c5b6, type: 3}
       propertyPath: rotationSpeed
       value: 4
       objectReference: {fileID: 0}

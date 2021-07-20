@@ -28,7 +28,6 @@ public class Shooting : MonoBehaviour
         while(!starshipController.isDead)
         {          
             ShootLaser();
-            Debug.Log(shootingPeriod);
             yield return new WaitForSeconds(shootingPeriod);
         }
     }
