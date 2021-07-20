@@ -61,7 +61,7 @@ public class StarshipController : MonoBehaviour
         {
             actualSpeed = 0f;
         }
-        else
+        else if(Input.touchCount <= 0)
         {
             actualSpeed = speed;
         }
