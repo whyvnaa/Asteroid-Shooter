@@ -139,3 +139,4 @@ MonoBehaviour:
   speed: 0
   lifes: 3
   avgSpeed: 0.5
+  points: 3

@@ -18,7 +18,7 @@ public class Laser : MonoBehaviour
             if (asteroid.lifes < 1)
             {
                 Destroy(collision.gameObject);
-                ScoreScript.scoreValue += 1;
+                ScoreScript.scoreValue += asteroid.points;
             }
                      
             

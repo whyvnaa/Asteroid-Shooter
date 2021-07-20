@@ -9,6 +9,8 @@ public class Shooting : MonoBehaviour
     public GameObject laserPrefab;
     public float speed = 10f;
 
+    private StarshipController starshipController;
+
     //public float laserForce = 10f;
 
     public float shootingPeriod = 1f;
@@ -17,12 +19,14 @@ public class Shooting : MonoBehaviour
 
 
     void Start(){
-        StartCoroutine("ShootingTimer");
+        starshipController = this.GetComponent<StarshipController>();
+        StartCoroutine(ShootingTimer());
     }
 
 
     IEnumerator ShootingTimer() {
-        while(true){          
+        while(!starshipController.isDead)
+        {          
             ShootLaser();
             Debug.Log(shootingPeriod);
             yield return new WaitForSeconds(shootingPeriod);

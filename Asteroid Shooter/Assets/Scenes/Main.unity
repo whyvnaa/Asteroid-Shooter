@@ -727,6 +727,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &868196005 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3645445214258288898, guid: b777b5112044915419ff8c9f5793c5b6, type: 3}
+  m_PrefabInstance: {fileID: 1356622211560784220}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &992476407
 GameObject:
   m_ObjectHideFlags: 0
@@ -1790,12 +1795,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1927953097, guid: b777b5112044915419ff8c9f5793c5b6, type: 3}
       propertyPath: shootingPeriod
-      value: 0.1
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 1356622210700523916, guid: b777b5112044915419ff8c9f5793c5b6, type: 3}
       propertyPath: speed
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1356622210700523916, guid: b777b5112044915419ff8c9f5793c5b6, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 868196005}
     - target: {fileID: 1356622210700523916, guid: b777b5112044915419ff8c9f5793c5b6, type: 3}
       propertyPath: rotationSpeed
       value: 4

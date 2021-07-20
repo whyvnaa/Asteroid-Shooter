@@ -12,6 +12,7 @@ public abstract class Asteroid : MonoBehaviour
 
     public int lifes;
     public float avgSpeed;
+    public int points;
 
     void Update()
     {

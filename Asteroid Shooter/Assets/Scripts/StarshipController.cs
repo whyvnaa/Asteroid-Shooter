@@ -10,6 +10,9 @@ public class StarshipController : MonoBehaviour
     private float actualSpeed;
     private Vector2 faceDirection = new Vector2(0,1);
 
+    public Animator animator;
+    public bool isDead = false;
+
     void Start()
     {
         actualSpeed = speed;
@@ -17,53 +20,57 @@ public class StarshipController : MonoBehaviour
     
     void Update()
     {
-        //Stores the direction which the spaceship is facing in a Vector2 and moves the spaceship in that direction
-        faceDirection = GetUnitVectorFromAngle(transform.eulerAngles.z);
-        transform.position = (Vector2)transform.position + faceDirection * actualSpeed * Time.deltaTime;
-
-        //rotates the spaceship to the right, left depending on which side of the screen is touched
-        if(Input.touchCount > 0)
+        if (!isDead)
         {
-            Touch touch1 = Input.GetTouch(0);
-            if (Input.touchCount == 1)
+            //Stores the direction which the spaceship is facing in a Vector2 and moves the spaceship in that direction
+            faceDirection = GetUnitVectorFromAngle(transform.eulerAngles.z);
+            transform.position = (Vector2)transform.position + faceDirection * actualSpeed * Time.deltaTime;
+
+            //rotates the spaceship to the right, left depending on which side of the screen is touched
+            if (Input.touchCount > 0)
             {
-                Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch1.position);
-                if(touchPosition.x < 0f)
+                Touch touch1 = Input.GetTouch(0);
+                if (Input.touchCount == 1)
                 {
-                    transform.Rotate(0, 0, rotationSpeed);
-                } else if(touchPosition.x >= 0f)
+                    Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch1.position);
+                    if (touchPosition.x < 0f)
+                    {
+                        transform.Rotate(0, 0, rotationSpeed);
+                    }
+                    else if (touchPosition.x >= 0f)
+                    {
+                        transform.Rotate(0, 0, -rotationSpeed);
+                    }
+                }
+                //if there are two or more touches on the screen, the spaceship stops
+                if (Input.touchCount >= 2)
                 {
-                    transform.Rotate(0, 0, -rotationSpeed);
+                    Touch touch2 = Input.GetTouch(1);
+                    actualSpeed = 0f;
+                    if (touch1.phase == TouchPhase.Ended || touch2.phase == TouchPhase.Ended)
+                    {
+                        actualSpeed = speed;
+                    }
                 }
             }
-            //if there are two or more touches on the screen, the spaceship stops
-            if(Input.touchCount >= 2)
+
+            // key control for testing
+            if (Input.GetKey("left"))
             {
-                Touch touch2 = Input.GetTouch(1);
+                transform.Rotate(0, 0, rotationSpeed);
+            }
+            if (Input.GetKey("right"))
+            {
+                transform.Rotate(0, 0, -rotationSpeed);
+            }
+            if (Input.GetKey("left") && Input.GetKey("right"))
+            {
                 actualSpeed = 0f;
-                if(touch1.phase == TouchPhase.Ended || touch2.phase == TouchPhase.Ended)
-                {
-                    actualSpeed = speed; 
-                }
             }
-        }
-
-        // key control for testing
-        if(Input.GetKey("left"))
-        {
-            transform.Rotate(0, 0, rotationSpeed);
-        }
-        if (Input.GetKey("right"))
-        {
-            transform.Rotate(0, 0, -rotationSpeed);
-        }
-        if (Input.GetKey("left") && Input.GetKey("right"))
-        {
-            actualSpeed = 0f;
-        }
-        else if(Input.touchCount <= 0)
-        {
-            actualSpeed = speed;
+            else if (Input.touchCount <= 0)
+            {
+                actualSpeed = speed;
+            }
         }
     }
 
@@ -87,10 +94,22 @@ public class StarshipController : MonoBehaviour
 
     void GameOver(int score)
     {
+        isDead = true;
+        this.GetComponent<ParticleSystem>().Stop();
+        actualSpeed = 0;
+        animator.SetBool("IsDead", true);
+        StartCoroutine(waitGameOver(score));
+    }
+
+    IEnumerator waitGameOver(int score)
+    {
+        yield return new WaitForSeconds(1.2f);
         GameOverScreen.Setup(score);
         ScoreScript.scoreValue = 0;
         Time.timeScale = 0;
         this.enabled = false;
     }
+
+
 
 }
