@@ -47,6 +47,24 @@ public class StarshipController : MonoBehaviour
                 }
             }
         }
+
+        // key control for testing
+        if(Input.GetKey("left"))
+        {
+            transform.Rotate(0, 0, rotationSpeed);
+        }
+        if (Input.GetKey("right"))
+        {
+            transform.Rotate(0, 0, -rotationSpeed);
+        }
+        if (Input.GetKey("left") && Input.GetKey("right"))
+        {
+            actualSpeed = 0f;
+        }
+        else
+        {
+            actualSpeed = speed;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
