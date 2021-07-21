@@ -13,6 +13,7 @@ public class StarshipController : MonoBehaviour
     public Animator animator;
     public bool isDead = false;
 
+
     void Start()
     {
         actualSpeed = speed;
