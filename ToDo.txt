@@ -1,14 +1,11 @@
 - verschiedene Asteroiden (Artwork und dann implementierung)
 - Asteroiden Zerstörungsanimation
-- Game Over Animation
+- Speichersystem, Währung
 
 Reserve (grob nach Priorität):
 
-
-- Asteroiden mit mehreren Leben (genaue Umsetzung noch besprechen)
 - Powerups Sprites
 - Powerups implementieren
-- Hauptmenü Screen
 - Kometen (schnell und klein)
 - Upgrades, Währung
 - verschiedene Modi (Highscore, Level)
@@ -20,6 +17,9 @@ Reserve (grob nach Priorität):
 ---------------------------------
 
 Done:
+- Hauptmenü Screen
+- Asteroiden mit mehreren Leben (genaue Umsetzung noch besprechen)
+- Game Over Animation
 - Kollision mit Asteroiden (Game Over)
 - Kanonen
 - Particle System
