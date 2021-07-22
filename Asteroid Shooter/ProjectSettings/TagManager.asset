@@ -38,6 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1570428171
+    locked: 0
+  - name: Asteroid_Particle
+    uniqueID: 2762727693
+    locked: 0
+  - name: Asteroid
+    uniqueID: 43289717
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
