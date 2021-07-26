@@ -19,11 +19,11 @@ public class StarshipController : MonoBehaviour
         actualSpeed = speed;
     }
     
-    void Update()
+    void FixedUpdate()
     {
         //Stores the direction which the spaceship is facing in a Vector2 and moves the spaceship in that direction
         faceDirection = GetUnitVectorFromAngle(transform.eulerAngles.z);
-        transform.position = (Vector2)transform.position + faceDirection * actualSpeed * Time.deltaTime;
+        transform.position = (Vector2)transform.position + faceDirection * actualSpeed;
         if (!isDead)
         {
             //rotates the spaceship to the right, left depending on which side of the screen is touched

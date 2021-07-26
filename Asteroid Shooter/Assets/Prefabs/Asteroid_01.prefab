@@ -140,3 +140,4 @@ MonoBehaviour:
   lifes: 1
   avgSpeed: 1
   points: 1
+  starPrefab_01: {fileID: 1426624802017298425, guid: ac723ca994cca824caed612924630d45, type: 3}

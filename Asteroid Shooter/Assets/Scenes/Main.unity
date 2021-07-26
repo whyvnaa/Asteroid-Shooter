@@ -1799,7 +1799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1356622210700523916, guid: b777b5112044915419ff8c9f5793c5b6, type: 3}
       propertyPath: speed
-      value: 4
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1356622210700523916, guid: b777b5112044915419ff8c9f5793c5b6, type: 3}
       propertyPath: animator
@@ -1811,7 +1811,7 @@ PrefabInstance:
       objectReference: {fileID: 1365270878}
     - target: {fileID: 1356622210700523916, guid: b777b5112044915419ff8c9f5793c5b6, type: 3}
       propertyPath: rotationSpeed
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1356622210700523916, guid: b777b5112044915419ff8c9f5793c5b6, type: 3}
       propertyPath: GameOverScreen

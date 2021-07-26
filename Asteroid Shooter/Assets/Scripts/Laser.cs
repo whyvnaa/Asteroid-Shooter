@@ -6,6 +6,7 @@ public class Laser : MonoBehaviour
 {
 
     public GameObject hitEffect;
+    public GameObject starPrefab_01;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -17,6 +18,8 @@ public class Laser : MonoBehaviour
             asteroid.lifes--;
             if (asteroid.lifes < 1)
             {
+                GameObject star = Instantiate(starPrefab_01) as GameObject;
+                star.transform.position = collision.transform.position;
                 Destroy(collision.gameObject);
                 ScoreScript.scoreValue += asteroid.points;
             } 
