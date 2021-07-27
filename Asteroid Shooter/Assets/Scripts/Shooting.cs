@@ -34,7 +34,6 @@ public class Shooting : MonoBehaviour
 
     void ShootLaser()
     {
-        Debug.Log(shootingPeriod);
         GameObject laser = Instantiate(laserPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = laser.GetComponent<Rigidbody2D>();
         rb.velocity = firePoint.up * speed;

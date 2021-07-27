@@ -18,8 +18,8 @@ public class Laser : MonoBehaviour
             asteroid.lifes--;
             if (asteroid.lifes < 1)
             {
-                GameObject star = Instantiate(starPrefab_01) as GameObject;
-                star.transform.position = collision.transform.position;
+                //GameObject star = Instantiate(starPrefab_01) as GameObject;
+                //star.transform.position = collision.transform.position;
                 Destroy(collision.gameObject);
                 ScoreScript.scoreValue += asteroid.points;
             } 
