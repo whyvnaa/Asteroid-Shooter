@@ -98,6 +98,7 @@ public class StarshipController : MonoBehaviour
         this.GetComponent<ParticleSystem>().Stop();
         animator.SetBool("IsDead", true);
         StartCoroutine(waitGameOver(score));
+        SaveSystem.SavePlayer(GetComponent<PlayerData>());
     }
 
     IEnumerator waitGameOver(int score)

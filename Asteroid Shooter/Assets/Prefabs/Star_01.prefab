@@ -100,7 +100,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0066654757}
+  m_Offset: {x: 0.0030317307, y: 0.0036337972}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -111,7 +111,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.25, y: 0.23666905}
+  m_Size: {x: 0.3591416, y: 0.3397473}
   m_EdgeRadius: 0
 --- !u!198 &394103043792239347
 ParticleSystem:
@@ -4897,9 +4897,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 547d20e59ef574142a1a9a2d477a1ced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1356622210700523923, guid: b777b5112044915419ff8c9f5793c5b6, type: 3}
-  attractionRange: 2
-  distance: 0
+  player: {fileID: 0}
+  attractionRange: 5.02
+  attractionForce: 0.1
+  distance: 19.72
 --- !u!50 &-4176353408162823815
 Rigidbody2D:
   serializedVersion: 4
@@ -4912,7 +4913,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0

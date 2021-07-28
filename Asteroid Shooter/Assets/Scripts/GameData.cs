@@ -2,7 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameData : MonoBehaviour
+[System.Serializable]
+public class GameData
 {
     public int coinAmount;
+    public GameData(PlayerData playerData)
+    {
+        coinAmount = playerData.coinAmount;
+    }
 }

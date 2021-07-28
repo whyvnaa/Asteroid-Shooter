@@ -3,16 +3,15 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 public static class SaveSystem
 {
-    public static void SavePlayer(GameData gameData)
+    public static void SavePlayer(PlayerData playerData)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/player.fun";
         FileStream stream = new FileStream(path, FileMode.Create);
-
-        PlayerData data = new PlayerData(gameData);
+        GameData gameData = new GameData(playerData);
         try 
         {
-            formatter.Serialize(stream, data);
+            formatter.Serialize(stream, gameData);
         }
         finally
         {
@@ -20,7 +19,7 @@ public static class SaveSystem
         }
     }
 
-    public static PlayerData LoadPlayer()
+    public static GameData LoadPlayer()
     {
         string path = Path.Combine(Application.persistentDataPath, "player.fun");
         if (File.Exists(path))
@@ -30,7 +29,8 @@ public static class SaveSystem
             FileStream stream = new FileStream(path, FileMode.Open);
             try
             {
-                PlayerData data = formatter.Deserialize(stream) as PlayerData;
+                GameData data = formatter.Deserialize(stream) as GameData;
+                Debug.Log("loaded data: " + data);
                 return data;
             }
             finally

@@ -2,12 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class PlayerData
+public class PlayerData : MonoBehaviour
 {
-    int coinAmount;
-    public PlayerData(GameData gamedata)
+    [SerializeField]
+    public int coinAmount = 0;
+    private void Start()
     {
-        coinAmount = gamedata.coinAmount;
+        LoadData(SaveSystem.LoadPlayer());
+        Debug.Log("Coins at start of round: " + coinAmount);
+    }
+
+    public void AddToCoinAmount(int amount)
+    {
+        coinAmount += amount;
+        Debug.Log("CoinAmount now: " + coinAmount);
+    }
+
+    private void LoadData(GameData gameData)
+    {
+        coinAmount = gameData.coinAmount;
     }
 }

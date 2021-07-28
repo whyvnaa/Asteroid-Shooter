@@ -6,6 +6,7 @@ public class Star_1 : MonoBehaviour
 {
     public GameObject player;
     public float attractionRange;
+    public float attractionForce;
     [SerializeField]
     float distance;
     Rigidbody2D rb;
@@ -17,8 +18,9 @@ public class Star_1 : MonoBehaviour
     void FixedUpdate()
     {
         distance = Vector3.Distance(transform.position, player.transform.position);
+        if(distance < attractionRange)
         {
-            rb.((player.transform.position - this.transform.position).normalized / (Mathf.Pow(distance, 2)));
+            rb.AddForce((player.transform.position - this.transform.position).normalized / distance * attractionForce, ForceMode2D.Impulse);
         }
     }
 
@@ -26,5 +28,14 @@ public class Star_1 : MonoBehaviour
     {
         Gizmos.DrawWireSphere(this.transform.position, attractionRange);
         Gizmos.DrawLine(transform.position, player.transform.position);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerData>().AddToCoinAmount(1);
+            Destroy(gameObject);
+        }
     }
 }
